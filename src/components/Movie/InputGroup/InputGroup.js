@@ -5,11 +5,11 @@ const InputGroup = props => (
     <div className="input-group mb-3">
       <input onChange={props.inputValue} type="text" required className="form-control" value={props.clearinputValue}/>
       <div className="input-group-append">
-        <button className="btn btn-outline-secondary" type="submit" id="button-addon2">Add</button>
+        {props.children}
       </div>
     </div>
     <p>To watch list:</p>
   </form>
-)
+);
 
 export default InputGroup;
