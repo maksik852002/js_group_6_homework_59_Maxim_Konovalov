@@ -17,7 +17,7 @@ class JokeApp extends Component {
     jokes.splice(0, jokes.length)
     let promises = [];
     for(var i=0;i<5;i++) {
-      promises.push(await fetch('https://api.chucknorris.io/jokes/random').then(response => response.json()));
+      promises.push(await fetch('https://api.chucknorris.io/jokes/random').then(response => response.ok&&response.json()));
     }
     Promise.all(promises)
     .then(result => this.setState({jokes:result}))

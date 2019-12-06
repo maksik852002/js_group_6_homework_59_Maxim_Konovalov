@@ -7,8 +7,9 @@ import nanoid from 'nanoid';
 class MovieTracking extends Component {
   constructor(props) {
     super(props);
+    const parseLocalItem = JSON.parse(localStorage.getItem('movieElement'));
     this.state = {
-      movieElement:JSON.parse(localStorage.getItem('movieElement')),
+      movieElement: parseLocalItem ? parseLocalItem : [],
       inputValue:'',
     };
   };
